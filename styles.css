@@ -313,13 +313,21 @@ h1 {
   box-shadow: 0 30px 80px rgba(17, 24, 39, 0.22);
 }
 
+.project-hero-card.top-project {
+  min-height: 620px;
+  grid-template-columns: 1fr;
+}
+
 .project-hero-card.bubblecraft {
-  grid-column: 1 / -1;
-  min-height: 460px;
-  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1fr);
   background:
     radial-gradient(circle at 78% 18%, rgba(39, 196, 107, 0.58), transparent 22rem),
     linear-gradient(120deg, rgba(17, 24, 39, 0.98), rgba(17, 24, 39, 0.82));
+}
+
+.project-hero-card.capture-quest {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(245, 184, 75, 0.4), transparent 18rem),
+    linear-gradient(120deg, rgba(62, 40, 17, 0.96), rgba(17, 24, 39, 0.86));
 }
 
 .project-hero-card.recycling {
@@ -371,7 +379,12 @@ h1 {
   overflow-wrap: anywhere;
 }
 
-.project-hero-card:not(.bubblecraft) h3 {
+.project-hero-card.top-project h3 {
+  font-size: clamp(2.2rem, 4.1vw, 4rem);
+  line-height: 0.9;
+}
+
+.project-hero-card:not(.top-project) h3 {
   font-size: clamp(2.2rem, 4.2vw, 3.9rem);
   line-height: 0.9;
 }
@@ -496,6 +509,26 @@ h1 {
   object-position: center;
   border-radius: 18px;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.top-project .project-screenshot {
+  min-height: 300px;
+}
+
+.top-project .project-screenshot img {
+  min-height: 300px;
+}
+
+.capture-screenshot {
+  place-items: center;
+  align-content: center;
+}
+
+.capture-screenshot img {
+  width: min(100%, 210px);
+  height: min(100%, 330px);
+  object-fit: cover;
+  object-position: top center;
 }
 
 .project-logo {
@@ -645,6 +678,7 @@ h1 {
   .project-showcase,
   .project-hero-card,
   .project-hero-card.bubblecraft,
+  .project-hero-card.capture-quest,
   .project-hero-card.recycling,
   .project-hero-card.weather {
     grid-template-columns: 1fr;
@@ -671,6 +705,7 @@ h1 {
 
   .project-hero-card,
   .project-hero-card.bubblecraft,
+  .project-hero-card.capture-quest,
   .project-hero-card.recycling,
   .project-hero-card.weather {
     min-height: auto;
