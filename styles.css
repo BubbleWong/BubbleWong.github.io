@@ -525,10 +525,10 @@ h1 {
 }
 
 .capture-screenshot img {
-  width: min(100%, 210px);
-  height: min(100%, 330px);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
 }
 
 .project-logo {
